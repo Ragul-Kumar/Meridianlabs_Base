@@ -1,5 +1,6 @@
 ---
 import Logo from "@/components/Logo.astro";
+import { withBase } from "@/lib/links";
 
 interface Props {
   active?: "home" | "services" | "career" | "insights";
@@ -37,7 +38,7 @@ const linkBase =
       {
         nav.map((l) => (
           <a
-            href={l.href}
+            href={withBase(l.href)}
             class={`${linkBase} ${active === l.key ? "text-primary" : "text-on-surface-variant"}`}
           >
             {l.label}
@@ -50,17 +51,17 @@ const linkBase =
       <h4 class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-widest">
         Capabilities
       </h4>
-      <a class={`${linkBase} text-on-surface-variant`} href="/services#website-build">Website Build</a>
-      <a class={`${linkBase} text-on-surface-variant`} href="/services#website-rework">Rework</a>
-      <a class={`${linkBase} text-on-surface-variant`} href="/services#app-build">App Build</a>
-      <a class={`${linkBase} text-on-surface-variant`} href="/services">UI/UX Design</a>
+      <a class={`${linkBase} text-on-surface-variant`} href={withBase("/services#website-build")}>Website Build</a>
+      <a class={`${linkBase} text-on-surface-variant`} href={withBase("/services#website-rework")}>Rework</a>
+      <a class={`${linkBase} text-on-surface-variant`} href={withBase("/services#app-build")}>App Build</a>
+      <a class={`${linkBase} text-on-surface-variant`} href={withBase("/services")}>UI/UX Design</a>
     </div>
 
     <div class="flex flex-col gap-4">
       <h4 class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-widest">
         Legal &amp; Contact
       </h4>
-      <a class={`${linkBase} text-on-surface-variant`} href="/privacy-policy">Privacy Policy</a>
+      <a class={`${linkBase} text-on-surface-variant`} href={withBase("/privacy-policy")}>Privacy Policy</a>
       <a class={`${linkBase} text-on-surface-variant`} href="mailto:ravi@cyces.co">Contact</a>
       <div class="flex gap-4 mt-stack-sm">
         <a class="text-on-surface-variant hover:text-primary-fixed" href="#" aria-label="Terminal"><span class="material-symbols-outlined">terminal</span></a>

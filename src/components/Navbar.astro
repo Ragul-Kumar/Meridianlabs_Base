@@ -1,6 +1,7 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
 import Logo from "@/components/Logo.astro";
+import { withBase } from "@/lib/links";
 
 interface Props {
   active?: "home" | "services" | "career" | "insights";
@@ -31,7 +32,7 @@ const current = "text-primary font-bold border-b border-primary-fixed";
     <div class="hidden md:flex gap-8 items-center">
       {
         links.map((l) => (
-          <a href={l.href} class={`${base} ${active === l.key ? current : idle}`}>
+          <a href={withBase(l.href)} class={`${base} ${active === l.key ? current : idle}`}>
             {l.label}
           </a>
         ))
@@ -39,7 +40,7 @@ const current = "text-primary font-bold border-b border-primary-fixed";
     </div>
 
     <a
-      href="/services"
+      href={withBase("/services")}
       class={`${buttonVariants({ size: "default" })} hidden md:inline-flex`}
     >
       Start a Project
@@ -62,14 +63,14 @@ const current = "text-primary font-bold border-b border-primary-fixed";
     {
       links.map((l) => (
         <a
-          href={l.href}
+          href={withBase(l.href)}
           class={`${base} block py-2 ${active === l.key ? current : idle}`}
         >
           {l.label}
         </a>
       ))
     }
-    <a href="/services" class={`${buttonVariants()} mt-stack-sm w-full`}>
+    <a href={withBase("/services")} class={`${buttonVariants()} mt-stack-sm w-full`}>
       Start a Project
     </a>
   </div>

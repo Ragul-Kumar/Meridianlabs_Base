@@ -1,5 +1,6 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
+import { withBase } from "@/lib/links";
 ---
 
 <section
@@ -22,7 +23,7 @@ import { buttonVariants } from "@/components/ui/button";
     bridge the gap between complex engineering and beautiful design.
   </p>
   <div class="flex flex-col sm:flex-row gap-gutter w-full sm:w-auto">
-    <a href="/services" class={buttonVariants({ size: "lg" })}>
+    <a href={withBase("/services")} class={buttonVariants({ size: "lg" })}>
       Start a Project <span class="material-symbols-outlined">arrow_forward</span>
     </a>
     <a href="#selected-work" class={buttonVariants({ variant: "outline", size: "lg" })}>

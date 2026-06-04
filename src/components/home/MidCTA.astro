@@ -1,5 +1,6 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
+import { withBase } from "@/lib/links";
 ---
 
 <section class="py-section-padding-v px-gutter">
@@ -14,7 +15,7 @@ import { buttonVariants } from "@/components/ui/button";
       We take on a limited number of projects each month. Tell us what you're
       building.
     </p>
-    <a href="/services" class={`${buttonVariants({ size: "xl" })} relative z-10`}>
+    <a href={withBase("/services")} class={`${buttonVariants({ size: "xl" })} relative z-10`}>
       Start a Project <span class="material-symbols-outlined">arrow_forward</span>
     </a>
   </div>

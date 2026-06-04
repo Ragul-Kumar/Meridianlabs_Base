@@ -1,5 +1,6 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
+import { withBase } from "@/lib/links";
 ---
 
 <section class="py-section-padding-v bg-surface-card border-y border-outline-variant px-gutter">
@@ -25,7 +26,7 @@ import { buttonVariants } from "@/components/ui/button";
         We eliminate the noise to focus on what matters: performance, usability,
         and conversion.
       </p>
-      <a href="/services" class={buttonVariants({ variant: "outline" })}>
+      <a href={withBase("/services")} class={buttonVariants({ variant: "outline" })}>
         See What We Build <span class="material-symbols-outlined">arrow_forward</span>
       </a>
     </div>
