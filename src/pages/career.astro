@@ -4,7 +4,6 @@ import CareerHero from "@/components/career/CareerHero.astro";
 import Values from "@/components/career/Values.astro";
 import Internship from "@/components/career/Internship.astro";
 import ApplyForm from "@/components/career/ApplyForm.tsx";
-import CertVerify from "@/components/career/CertVerify.tsx";
 ---
 
 <BaseLayout title="Careers & Internships | Meridian Labs" active="career">
@@ -20,28 +19,6 @@ import CertVerify from "@/components/career/CertVerify.tsx";
           Tell Us About Yourself.
         </h2>
         <ApplyForm client:load />
-      </div>
-    </section>
-
-    <!-- Certificate Verification -->
-    <section class="py-section-padding-v border-t border-outline-variant bg-surface-card">
-      <div class="max-w-container-max mx-auto px-gutter">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div>
-            <span class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-[0.2em] mb-4 block">
-              Certificate Verification
-            </span>
-            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">
-              Verify an Internship Certificate.
-            </h2>
-            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-              All Meridian Labs internship certificates are cryptographically signed.
-              Enter the unique ID found at the bottom of the certificate to
-              verify its authenticity.
-            </p>
-          </div>
-          <CertVerify client:load />
-        </div>
       </div>
     </section>
   </main>
