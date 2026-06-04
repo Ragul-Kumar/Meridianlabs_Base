@@ -3,13 +3,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
+const selectCls =
+  "w-full appearance-none rounded-none border-0 border-b border-outline-variant bg-transparent px-0 py-2 pr-8 font-body-md text-body-md text-primary focus:outline-none focus:border-primary-fixed cursor-pointer";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = React.useState(false);
@@ -53,17 +49,17 @@ export default function ContactForm() {
       </div>
       <div className="flex flex-col gap-2">
         <Label htmlFor="projectType">Project Type</Label>
-        <Select name="projectType" defaultValue="Website Build">
-          <SelectTrigger id="projectType">
-            <SelectValue placeholder="Select a type" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="Website Build">Website Build</SelectItem>
-            <SelectItem value="Website Rework">Website Rework</SelectItem>
-            <SelectItem value="Mobile App Build">Mobile App Build</SelectItem>
-            <SelectItem value="Something Else">Something Else</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="relative">
+          <select id="projectType" name="projectType" defaultValue="Website Build" className={selectCls}>
+            <option className="bg-surface-card" value="Website Build">Website Build</option>
+            <option className="bg-surface-card" value="Website Rework">Website Rework</option>
+            <option className="bg-surface-card" value="Mobile App Build">Mobile App Build</option>
+            <option className="bg-surface-card" value="Something Else">Something Else</option>
+          </select>
+          <span className="material-symbols-outlined pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-primary-fixed">
+            expand_more
+          </span>
+        </div>
       </div>
       <div className="flex flex-col gap-2 sm:col-span-2">
         <Label htmlFor="message">Tell Us About Your Project</Label>
