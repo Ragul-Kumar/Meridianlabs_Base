@@ -12,8 +12,8 @@ export default function CertVerify() {
       setState("idle");
       return;
     }
-    // Mock logic: ID 'STUDIO-123' is valid
-    setState(id.trim().toUpperCase() === "STUDIO-123" ? "valid" : "invalid");
+    // Mock logic: ID 'MERIDIAN-123' is valid
+    setState(id.trim().toUpperCase() === "MERIDIAN-123" ? "valid" : "invalid");
   }
 
   return (
