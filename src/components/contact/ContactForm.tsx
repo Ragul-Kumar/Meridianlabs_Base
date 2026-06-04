@@ -66,20 +66,6 @@ export default function ContactForm() {
         </Select>
       </div>
       <div className="flex flex-col gap-2 sm:col-span-2">
-        <Label htmlFor="budget">Budget Range</Label>
-        <Select name="budget" defaultValue="$5k – $15k">
-          <SelectTrigger id="budget">
-            <SelectValue placeholder="Select a range" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="Under $5k">Under $5k</SelectItem>
-            <SelectItem value="$5k – $15k">$5k – $15k</SelectItem>
-            <SelectItem value="$15k – $50k">$15k – $50k</SelectItem>
-            <SelectItem value="$50k+">$50k+</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="flex flex-col gap-2 sm:col-span-2">
         <Label htmlFor="message">Tell Us About Your Project</Label>
         <Textarea
           id="message"
