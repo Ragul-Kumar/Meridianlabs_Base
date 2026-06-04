@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 const selectCls =
   "w-full appearance-none rounded-none border-0 border-b border-outline-variant bg-transparent px-0 py-2 pr-8 font-body-md text-body-md text-primary focus:outline-none focus:border-primary-fixed cursor-pointer";
 
+// Required-field marker
+const Req = () => <span className="text-primary-fixed" aria-hidden="true">*</span>;
+
 export default function ApplyForm() {
   const [submitted, setSubmitted] = React.useState(false);
   const [fileName, setFileName] = React.useState("");
@@ -40,19 +43,19 @@ export default function ApplyForm() {
       className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10"
     >
       <div className="flex flex-col gap-3">
-        <Label htmlFor="fullName">Full Name</Label>
+        <Label htmlFor="fullName">Full Name <Req /></Label>
         <Input id="fullName" name="fullName" type="text" placeholder="John Doe" required />
       </div>
       <div className="flex flex-col gap-3">
-        <Label htmlFor="email">Email Address</Label>
+        <Label htmlFor="email">Email Address <Req /></Label>
         <Input id="email" name="email" type="email" placeholder="john@email.com" required />
       </div>
       <div className="flex flex-col gap-3">
-        <Label htmlFor="phone">Phone Number</Label>
+        <Label htmlFor="phone">Phone Number <Req /></Label>
         <Input id="phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" required />
       </div>
       <div className="flex flex-col gap-3">
-        <Label htmlFor="role">Intended Role</Label>
+        <Label htmlFor="role">Intended Role <Req /></Label>
         <div className="relative">
           <select id="role" name="role" defaultValue="Design Intern" className={selectCls}>
             <option className="bg-surface-card" value="Design Intern">Design Intern</option>
@@ -66,12 +69,14 @@ export default function ApplyForm() {
       </div>
 
       <div className="flex flex-col gap-3 md:col-span-2">
-        <Label htmlFor="portfolio">Portfolio Link</Label>
-        <Input id="portfolio" name="portfolio" type="url" placeholder="https://yourwork.com" required />
+        <Label htmlFor="portfolio">
+          Portfolio Link <span className="text-on-surface-variant/60 normal-case">(optional)</span>
+        </Label>
+        <Input id="portfolio" name="portfolio" type="url" placeholder="https://yourwork.com" />
       </div>
 
       <div className="flex flex-col gap-3 md:col-span-2">
-        <Label htmlFor="resume">Resume / CV</Label>
+        <Label htmlFor="resume">Resume / CV <Req /></Label>
         <label
           htmlFor="resume"
           className="flex items-center justify-between gap-3 border border-outline-variant bg-transparent px-4 py-4 cursor-pointer hover:border-primary-fixed transition-colors"
