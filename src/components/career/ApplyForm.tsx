@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 const selectCls =
@@ -91,15 +90,6 @@ export default function ApplyForm() {
           required
           onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
         />
-      </div>
-
-      <div className="flex flex-col gap-3 md:col-span-2">
-        <Label htmlFor="statement">Personal Statement</Label>
-        <Textarea id="statement" name="statement" rows={3} placeholder="Why Meridian Labs?" required />
-      </div>
-      <div className="flex flex-col gap-3 md:col-span-2">
-        <Label htmlFor="source">How did you hear about us?</Label>
-        <Input id="source" name="source" type="text" placeholder="Twitter, LinkedIn, Referral..." required />
       </div>
 
       <div className="md:col-span-2 pt-4">
