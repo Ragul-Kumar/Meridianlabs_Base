@@ -1,0 +1,21 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<section class="py-section-padding-v px-gutter">
+  <div
+    class="max-w-container-max mx-auto border border-outline-variant p-stack-lg md:p-24 text-center relative overflow-hidden bg-surface-card"
+  >
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed/5 to-transparent pointer-events-none"></div>
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-md relative z-10">
+      Have a Project in Mind? Let's Talk.
+    </h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg relative z-10">
+      We take on a limited number of projects each month. Tell us what you're
+      building.
+    </p>
+    <a href="/services" class={`${buttonVariants({ size: "xl" })} relative z-10`}>
+      Start a Project <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+</section>

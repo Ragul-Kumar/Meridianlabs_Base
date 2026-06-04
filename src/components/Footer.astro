@@ -1,0 +1,75 @@
+---
+import Logo from "@/components/Logo.astro";
+
+interface Props {
+  active?: "home" | "services" | "career" | "insights";
+}
+const { active = "home" } = Astro.props;
+
+const nav = [
+  { label: "Home", href: "/", key: "home" },
+  { label: "Services", href: "/services", key: "services" },
+  { label: "Career", href: "/career", key: "career" },
+  { label: "Insights", href: "/insights", key: "insights" },
+];
+const linkBase =
+  "font-body-md text-body-md transition-colors hover:text-primary-fixed";
+---
+
+<footer class="w-full border-t border-outline-variant bg-background">
+  <div
+    class="grid grid-cols-1 md:grid-cols-4 gap-card-gap py-section-padding-v px-gutter max-w-container-max mx-auto"
+  >
+    <div class="flex flex-col gap-6">
+      <Logo href={null} />
+      <p class="font-body-md text-body-md text-on-surface-variant">
+        Architectural precision <br /> for digital identities.
+      </p>
+      <p class="font-label-mono text-label-mono text-on-surface-variant mt-stack-lg opacity-70">
+        Built to convert. Designed to last.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <h4 class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-widest">
+        Navigation
+      </h4>
+      {
+        nav.map((l) => (
+          <a
+            href={l.href}
+            class={`${linkBase} ${active === l.key ? "text-primary" : "text-on-surface-variant"}`}
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <h4 class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-widest">
+        Capabilities
+      </h4>
+      <a class={`${linkBase} text-on-surface-variant`} href="/services#website-build">Website Build</a>
+      <a class={`${linkBase} text-on-surface-variant`} href="/services#website-rework">Rework</a>
+      <a class={`${linkBase} text-on-surface-variant`} href="/services#app-build">App Build</a>
+      <a class={`${linkBase} text-on-surface-variant`} href="/services">UI/UX Design</a>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <h4 class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-widest">
+        Legal &amp; Contact
+      </h4>
+      <a class={`${linkBase} text-on-surface-variant`} href="/privacy-policy">Privacy Policy</a>
+      <a class={`${linkBase} text-on-surface-variant`} href="mailto:ravi@cyces.co">Contact</a>
+      <div class="flex gap-4 mt-stack-sm">
+        <a class="text-on-surface-variant hover:text-primary-fixed" href="#" aria-label="Terminal"><span class="material-symbols-outlined">terminal</span></a>
+        <a class="text-on-surface-variant hover:text-primary-fixed" href="#" aria-label="Code"><span class="material-symbols-outlined">code</span></a>
+        <a class="text-on-surface-variant hover:text-primary-fixed" href="#" aria-label="Hub"><span class="material-symbols-outlined">hub</span></a>
+      </div>
+      <p class="font-label-mono text-[10px] text-on-surface-variant mt-6 opacity-50">
+        © 2024 Creative Studio. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

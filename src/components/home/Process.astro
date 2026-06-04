@@ -1,0 +1,34 @@
+---
+const steps = [
+  { no: "01", phase: "DISCOVERY", title: "Deep Dive", body: "We interrogate your goals, users, and market to find the core problem we're solving." },
+  { no: "02", phase: "STRATEGY", title: "Architecture", body: "Mapping out user flows and technical requirements before a single pixel is moved." },
+  { no: "03", phase: "DESIGN", title: "Editorial UI", body: "High-impact visuals meet strict typographic systems for a professional look." },
+  { no: "04", phase: "DEVELOPMENT", title: "Clean Code", body: "Building with modern frameworks ensuring speed, security, and scalability." },
+  { no: "05", phase: "TESTING", title: "Rigorous QA", body: "Every button, link, and form tested across devices for a flawless launch." },
+  { no: "06", phase: "LAUNCH", title: "Handover", body: "We push live and provide your team with everything they need to scale." },
+];
+---
+
+<section class="py-section-padding-v px-gutter max-w-container-max mx-auto">
+  <div class="mb-stack-lg">
+    <p class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-[0.2em] mb-stack-sm">
+      Our Methodology
+    </p>
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">
+      From Brief to Live. No Guesswork.
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-card-gap">
+    {
+      steps.map((s) => (
+        <div class="border-l border-outline-variant pl-6 hover:border-primary-fixed transition-colors">
+          <span class="font-label-mono text-label-mono text-primary-fixed mb-4 block">
+            {s.no} / {s.phase}
+          </span>
+          <h3 class="font-headline-sm text-headline-sm text-primary mb-4">{s.title}</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">{s.body}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

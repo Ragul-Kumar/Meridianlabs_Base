@@ -1,0 +1,30 @@
+---
+const pillars = [
+  { icon: "analytics", title: "User Research", body: "Qualitative data drives every decision we make, ensuring your product resonates with the right audience." },
+  { icon: "architecture", title: "Information Design", body: "Complex data sets made legible through strict hierarchy and architectural layout principles." },
+  { icon: "bolt", title: "Performance First", body: "Lighting fast load times and optimized core web vitals to ensure zero user drop-off." },
+];
+---
+
+<section class="py-section-padding-v px-gutter max-w-container-max mx-auto border-t border-outline-variant">
+  <div class="text-center mb-stack-lg">
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">
+      We Don't Just Build. We Think Before We Build.
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-card-gap">
+    {
+      pillars.map((p) => (
+        <div class="bg-surface-card border border-outline-variant p-stack-md flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-surface-bright flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary-fixed text-4xl">
+              {p.icon}
+            </span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-primary mb-4 uppercase">{p.title}</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">{p.body}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+const values = [
+  { icon: "construction", title: "Builders", body: "Obsessed with the mechanics of how things work under the hood." },
+  { icon: "architecture", title: "Craft", body: "The final 1% of polish is what separates a product from a masterpiece." },
+  { icon: "auto_stories", title: "Learners", body: "The landscape shifts daily. We expect you to keep pace and lead the curve." },
+  { icon: "verified", title: "Ownership", body: "We don't micromanage. You own your outcomes and your growth." },
+];
+---
+
+<section class="py-section-padding-v px-gutter max-w-container-max mx-auto border-t border-outline-variant">
+  <div class="flex flex-col md:flex-row justify-between items-start mb-16">
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">
+      What We Look For <br /> in Everyone.
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-card-gap">
+    {
+      values.map((v) => (
+        <div class="flex flex-col gap-stack-md p-stack-md bg-surface-card border border-outline-variant">
+          <span class="material-symbols-outlined text-primary-fixed text-4xl">{v.icon}</span>
+          <h3 class="font-headline-sm text-headline-sm text-primary">{v.title}</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">{v.body}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

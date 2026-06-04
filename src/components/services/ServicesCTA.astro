@@ -1,0 +1,23 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<section class="py-section-padding-v px-gutter max-w-container-max mx-auto text-center">
+  <div class="bg-surface-container p-12 md:p-24 border border-outline-variant relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed/5 blur-[100px] rounded-full -mr-32 -mt-32"></div>
+    <div class="relative z-10">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-md">
+        Not Sure Which Service Fits You?
+      </h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-xl mx-auto">
+        Tell us about your project and we'll recommend the right path. It's free
+        and takes 2 minutes.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="mailto:ravi@cyces.co" class={buttonVariants()}>
+          Talk to Us <span class="material-symbols-outlined">chat_bubble</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

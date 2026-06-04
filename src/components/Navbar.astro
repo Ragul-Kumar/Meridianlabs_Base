@@ -1,0 +1,85 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import Logo from "@/components/Logo.astro";
+
+interface Props {
+  active?: "home" | "services" | "career" | "insights";
+}
+const { active = "home" } = Astro.props;
+
+const links = [
+  { label: "Home", href: "/", key: "home" },
+  { label: "Services", href: "/services", key: "services" },
+  { label: "Career", href: "/career", key: "career" },
+  { label: "Insights", href: "/insights", key: "insights" },
+];
+
+const base =
+  "font-label-mono text-label-mono uppercase tracking-widest transition-colors duration-300";
+const idle = "text-on-surface-variant font-medium hover:text-primary-fixed";
+const current = "text-primary font-bold border-b border-primary-fixed";
+---
+
+<header
+  class="sticky top-0 w-full z-50 border-b border-outline-variant bg-background/95 backdrop-blur-sm"
+>
+  <nav
+    class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto"
+  >
+    <Logo />
+
+    <div class="hidden md:flex gap-8 items-center">
+      {
+        links.map((l) => (
+          <a href={l.href} class={`${base} ${active === l.key ? current : idle}`}>
+            {l.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <a
+      href="/services"
+      class={`${buttonVariants({ size: "default" })} hidden md:inline-flex`}
+    >
+      Start a Project
+    </a>
+
+    <button
+      id="nav-toggle"
+      aria-label="Toggle menu"
+      class="md:hidden text-primary"
+    >
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-outline-variant bg-background px-gutter py-stack-md flex-col gap-stack-md"
+  >
+    {
+      links.map((l) => (
+        <a
+          href={l.href}
+          class={`${base} block py-2 ${active === l.key ? current : idle}`}
+        >
+          {l.label}
+        </a>
+      ))
+    }
+    <a href="/services" class={`${buttonVariants()} mt-stack-sm w-full`}>
+      Start a Project
+    </a>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("mobile-menu");
+  toggle?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
+  });
+</script>

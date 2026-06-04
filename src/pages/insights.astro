@@ -1,0 +1,16 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import InsightsHero from "@/components/insights/InsightsHero.astro";
+import InsightsGrid from "@/components/insights/InsightsGrid.tsx";
+import Newsletter from "@/components/insights/Newsletter.astro";
+---
+
+<BaseLayout title="Insights | STUDIO" active="insights">
+  <main>
+    <InsightsHero />
+    <section class="px-gutter max-w-container-max mx-auto pb-section-padding-v">
+      <InsightsGrid client:load />
+    </section>
+    <Newsletter />
+  </main>
+</BaseLayout>

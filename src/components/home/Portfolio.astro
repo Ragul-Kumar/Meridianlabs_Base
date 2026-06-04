@@ -1,0 +1,74 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<section id="selected-work" class="py-section-padding-v px-gutter max-w-container-max mx-auto">
+  <div class="flex justify-between items-end mb-stack-lg border-b border-outline-variant pb-stack-sm">
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Selected Work</h2>
+    <a class="font-label-mono text-label-mono text-primary-fixed uppercase flex items-center gap-2 mb-2" href="#">
+      View Archive <span class="material-symbols-outlined text-sm">north_east</span>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-card-gap">
+    <!-- Project 1 -->
+    <div class="md:col-span-8 bg-surface-card border border-outline-variant group">
+      <div class="aspect-[16/9] overflow-hidden">
+        <img
+          src="https://picsum.photos/seed/vortex/1280/720?grayscale"
+          alt="Vortex Capital"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div class="p-stack-md flex justify-between items-start">
+        <div>
+          <span class="font-label-mono text-label-mono text-on-surface-variant uppercase mb-2 block">FinTech · Web App</span>
+          <h3 class="font-headline-sm text-headline-sm text-primary">Vortex Capital</h3>
+        </div>
+        <a class={buttonVariants({ variant: "outline", size: "sm" })} href="#">View Project</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="md:col-span-4 bg-surface-card border border-outline-variant group">
+      <div class="aspect-square overflow-hidden">
+        <img
+          src="https://picsum.photos/seed/orbit/640/640?grayscale"
+          alt="Orbit Health"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div class="p-stack-md">
+        <span class="font-label-mono text-label-mono text-on-surface-variant uppercase mb-2 block">Lifestyle · Mobile</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary">Orbit Health</h3>
+        <a class="font-label-mono text-label-mono text-primary-fixed uppercase mt-4 flex items-center gap-2" href="#">
+          Explore <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="md:col-span-12 bg-surface-card border border-outline-variant group">
+      <div class="aspect-[21/9] overflow-hidden">
+        <img
+          src="https://picsum.photos/seed/nordic/1680/720?grayscale"
+          alt="NORDIC Concept Store"
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div class="p-stack-md flex justify-between items-center">
+        <div>
+          <span class="font-label-mono text-label-mono text-on-surface-variant uppercase mb-2 block">E-Commerce · Full Rebuild</span>
+          <h3 class="font-headline-sm text-headline-sm text-primary">NORDIC Concept Store</h3>
+        </div>
+        <a class={buttonVariants({ variant: "secondary" })} href="#">Case Study</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center mt-stack-lg">
+    <a class={buttonVariants({ variant: "outline" })} href="#">
+      View All Projects <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+</section>

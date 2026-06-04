@@ -1,0 +1,32 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<section
+  class="py-section-padding-v px-gutter max-w-container-max mx-auto text-center md:text-left flex flex-col items-center md:items-start"
+>
+  <p
+    class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-[0.2em] mb-stack-md"
+  >
+    Design &amp; Development Studio
+  </p>
+  <h1
+    class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-4xl mb-stack-lg"
+  >
+    We Build Websites and Apps That Actually Work.
+  </h1>
+  <p
+    class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-lg"
+  >
+    High-performance digital products built with architectural precision. We
+    bridge the gap between complex engineering and beautiful design.
+  </p>
+  <div class="flex flex-col sm:flex-row gap-gutter w-full sm:w-auto">
+    <a href="/services" class={buttonVariants({ size: "lg" })}>
+      Start a Project <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+    <a href="#selected-work" class={buttonVariants({ variant: "outline", size: "lg" })}>
+      See Our Work <span class="material-symbols-outlined">south</span>
+    </a>
+  </div>
+</section>

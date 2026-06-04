@@ -1,0 +1,117 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ServicesHero from "@/components/services/ServicesHero.astro";
+import ServiceBlock from "@/components/services/ServiceBlock.astro";
+import Comparison from "@/components/services/Comparison.astro";
+import ServicesCTA from "@/components/services/ServicesCTA.astro";
+
+const buildLeft = ["Strategy & Architecture", "Custom UI/UX Design", "CMS Integration"];
+const buildRight = ["SEO Optimization", "Performance Tuning", "Analytics Setup"];
+const reworkRows = ["Speed Audits", "UX Modernization", "Conversion Optimization"];
+const appItems = [
+  { icon: "smartphone", label: "iOS & Android Development" },
+  { icon: "api", label: "Custom API Development" },
+  { icon: "sync", label: "Real-time Data Sync" },
+  { icon: "security", label: "High-Grade Security" },
+];
+---
+
+<BaseLayout title="Services | STUDIO" active="services">
+  <main>
+    <ServicesHero />
+
+    <!-- Service 01: Website Build -->
+    <ServiceBlock
+      id="website-build"
+      label="01. EXPANSIVE DEVELOPMENT"
+      title="Website Build"
+      body="A ground-up digital presence designed to convert visitors into customers. We combine editorial aesthetics with technical brutalism to ensure your brand stands out in a crowded market."
+      timeline="3-6 Weeks"
+      ctaLabel="Start Your Website"
+      ctaIcon="arrow_forward"
+      ctaVariant="default"
+      imgSeed="webbuild"
+      imgRatio="aspect-square"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md mb-stack-lg">
+        <ul class="space-y-3">
+          {buildLeft.map((i) => (
+            <li class="flex items-center gap-2 font-body-md text-on-surface">
+              <span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              {i}
+            </li>
+          ))}
+        </ul>
+        <ul class="space-y-3">
+          {buildRight.map((i) => (
+            <li class="flex items-center gap-2 font-body-md text-on-surface">
+              <span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              {i}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </ServiceBlock>
+
+    <!-- Service 02: Website Rework -->
+    <ServiceBlock
+      id="website-rework"
+      label="02. OPTIMIZATION & SCALE"
+      title="Website Rework"
+      body="Is your current site lagging? We take existing platforms and strip them down to their core, rebuilding them for speed, conversion, and modern scalability."
+      timeline="1-4 Weeks"
+      ctaLabel="Fix My Website"
+      ctaIcon="build"
+      ctaVariant="outline"
+      reverse={true}
+      band={true}
+      imgSeed="rework"
+      imgRatio="aspect-video"
+    >
+      <div class="space-y-4 mb-stack-lg">
+        {reworkRows.map((r) => (
+          <div class="flex justify-between border-b border-outline-variant pb-2">
+            <span class="font-body-md text-on-surface">{r}</span>
+            <span class="font-label-mono text-label-mono text-primary-fixed">INCLUDED</span>
+          </div>
+        ))}
+      </div>
+    </ServiceBlock>
+
+    <!-- Service 03: Mobile App Build -->
+    <ServiceBlock
+      id="app-build"
+      label="03. NATIVE PERFORMANCE"
+      title="Mobile App Build"
+      body="Native and cross-platform applications built for the mobile-first era. We focus on low latency, gesture-driven interfaces, and seamless offline functionality."
+      timeline="6-12 Weeks"
+      ctaLabel="Build My App"
+      ctaIcon="add_to_home_screen"
+      ctaVariant="default"
+      imgSeed="appbuild"
+      imgRatio="aspect-square"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md mb-stack-lg">
+        <ul class="space-y-3">
+          {appItems.slice(0, 2).map((i) => (
+            <li class="flex items-center gap-2 font-body-md text-on-surface">
+              <span class="material-symbols-outlined text-primary-fixed">{i.icon}</span>
+              {i.label}
+            </li>
+          ))}
+        </ul>
+        <ul class="space-y-3">
+          {appItems.slice(2).map((i) => (
+            <li class="flex items-center gap-2 font-body-md text-on-surface">
+              <span class="material-symbols-outlined text-primary-fixed">{i.icon}</span>
+              {i.label}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </ServiceBlock>
+
+    <Comparison />
+    <ServicesCTA />
+  </main>
+</BaseLayout>

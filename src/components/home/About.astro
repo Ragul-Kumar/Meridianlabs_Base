@@ -1,0 +1,33 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<section class="py-section-padding-v bg-surface-card border-y border-outline-variant px-gutter">
+  <div
+    class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-start"
+  >
+    <div>
+      <p class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-[0.2em] mb-stack-md">
+        Who We Are
+      </p>
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary leading-tight">
+        A Small Studio That Ships Real Work.
+      </h2>
+    </div>
+    <div>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
+        We don't have layers of project managers or sales reps. When you work
+        with us, you work directly with the designers and engineers building
+        your vision. We prioritize technical excellence over empty promises.
+      </p>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">
+        Our approach is rooted in technical brutalism and editorial minimalism.
+        We eliminate the noise to focus on what matters: performance, usability,
+        and conversion.
+      </p>
+      <a href="/services" class={buttonVariants({ variant: "outline" })}>
+        See What We Build <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>

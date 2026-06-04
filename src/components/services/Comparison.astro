@@ -1,0 +1,47 @@
+---
+const rows = [
+  { criteria: "Custom Design", diy: "Generic / Locked", freelancer: "Varies widely", studio: "100% Bespoke" },
+  { criteria: "Business Strategy", diy: "Non-existent", freelancer: "Limited scope", studio: "Integrated" },
+  { criteria: "Mobile-First", diy: "Standard / Clunky", freelancer: "Hit or Miss", studio: "Optimized" },
+  { criteria: "Tech Stack", diy: "Proprietary / Locked", freelancer: "Opinionated", studio: "Best-in-Class" },
+  { criteria: "Performance", diy: "Slow / Bloated", freelancer: "Unpredictable", studio: "Extreme Speed" },
+  { criteria: "Scalability", diy: "Low Ceiling", freelancer: "Platform Dependent", studio: "Infinite" },
+];
+---
+
+<section class="py-section-padding-v bg-surface-container">
+  <div class="px-gutter max-w-container-max mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">
+        Why Not Just Use a Template or Freelancer?
+      </h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Different paths lead to different results. We optimize for the long game.
+      </p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-outline-variant">
+            <th class="py-6 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Criteria</th>
+            <th class="py-6 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Template / DIY</th>
+            <th class="py-6 font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Freelancer</th>
+            <th class="py-6 font-label-mono text-label-mono text-primary-fixed uppercase tracking-wider">STUDIO</th>
+          </tr>
+        </thead>
+        <tbody class="font-body-md text-body-md text-on-surface">
+          {
+            rows.map((r) => (
+              <tr class="border-b border-outline-variant">
+                <td class="py-8 font-bold">{r.criteria}</td>
+                <td class="py-8 text-on-surface-variant">{r.diy}</td>
+                <td class="py-8 text-on-surface-variant">{r.freelancer}</td>
+                <td class="py-8 text-primary font-bold">{r.studio}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
