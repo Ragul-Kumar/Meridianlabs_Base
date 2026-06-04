@@ -1,5 +1,6 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
+import { withBase } from "@/lib/links";
 ---
 
 <section class="py-section-padding-v px-gutter max-w-container-max mx-auto text-center">
@@ -14,7 +15,7 @@ import { buttonVariants } from "@/components/ui/button";
         and takes 2 minutes.
       </p>
       <div class="flex flex-col md:flex-row justify-center gap-4">
-        <a href="mailto:ravi@cyces.co" class={buttonVariants()}>
+        <a href={withBase("/contact")} class={buttonVariants()}>
           Talk to Us <span class="material-symbols-outlined">chat_bubble</span>
         </a>
       </div>

@@ -1,0 +1,110 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ContactForm from "@/components/contact/ContactForm.tsx";
+
+const details = [
+  { label: "Email", value: "ravi@cyces.co", href: "mailto:ravi@cyces.co", icon: "mail" },
+  { label: "Studio", value: "Chennai, India", href: null, icon: "location_on" },
+  { label: "Response Time", value: "Within 1 business day", href: null, icon: "schedule" },
+];
+
+const steps = [
+  { no: "01", title: "We Read It", body: "Every message lands with the people who actually build. No bots, no sales funnel." },
+  { no: "02", title: "We Reply", body: "Within one business day, with honest first thoughts and a few sharp questions." },
+  { no: "03", title: "We Scope", body: "A short call to align on goals, timeline, and budget before anything starts." },
+];
+---
+
+<BaseLayout title="Contact | Meridian Labs" active="contact">
+  <main class="overflow-hidden">
+    <!-- Hero -->
+    <section class="py-section-padding-v px-gutter max-w-container-max mx-auto flex flex-col items-start">
+      <span class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-[0.2em] mb-4">
+        Contact
+      </span>
+      <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-4xl mb-stack-md">
+        Let's Build Something That Lasts.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        Tell us what you're building. We take on a limited number of projects
+        each month — the more detail you share, the faster we can point you in
+        the right direction.
+      </p>
+    </section>
+
+    <!-- Info + Form -->
+    <section class="px-gutter max-w-container-max mx-auto pb-section-padding-v border-t border-outline-variant pt-section-padding-v">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-card-gap">
+        <!-- Left: contact details -->
+        <div class="md:col-span-5 flex flex-col gap-stack-lg">
+          <div class="flex flex-col gap-8">
+            {
+              details.map((d) => (
+                <div class="flex gap-4 items-start">
+                  <span class="material-symbols-outlined text-primary-fixed text-3xl">{d.icon}</span>
+                  <div class="flex flex-col gap-1">
+                    <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest">
+                      {d.label}
+                    </span>
+                    {d.href ? (
+                      <a href={d.href} class="font-headline-sm text-headline-sm text-primary hover:text-primary-fixed transition-colors">
+                        {d.value}
+                      </a>
+                    ) : (
+                      <span class="font-headline-sm text-headline-sm text-primary">{d.value}</span>
+                    )}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+
+          <div class="border-t border-outline-variant pt-stack-lg">
+            <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-4">
+              Find Us
+            </span>
+            <div class="flex gap-4">
+              <a class="w-12 h-12 border border-outline-variant flex items-center justify-center text-on-surface hover:border-primary-fixed hover:text-primary-fixed transition-colors" href="#" aria-label="Terminal">
+                <span class="material-symbols-outlined">terminal</span>
+              </a>
+              <a class="w-12 h-12 border border-outline-variant flex items-center justify-center text-on-surface hover:border-primary-fixed hover:text-primary-fixed transition-colors" href="#" aria-label="Code">
+                <span class="material-symbols-outlined">code</span>
+              </a>
+              <a class="w-12 h-12 border border-outline-variant flex items-center justify-center text-on-surface hover:border-primary-fixed hover:text-primary-fixed transition-colors" href="#" aria-label="Hub">
+                <span class="material-symbols-outlined">hub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form panel -->
+        <div class="md:col-span-7 bg-surface-card border border-outline-variant p-8 md:p-12">
+          <ContactForm client:load />
+        </div>
+      </div>
+    </section>
+
+    <!-- What happens next -->
+    <section class="py-section-padding-v px-gutter max-w-container-max mx-auto border-t border-outline-variant">
+      <div class="mb-stack-lg">
+        <span class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-[0.2em] mb-stack-sm block">
+          After You Hit Send
+        </span>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">
+          What Happens Next.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-card-gap">
+        {
+          steps.map((s) => (
+            <div class="border-l border-outline-variant pl-6 hover:border-primary-fixed transition-colors">
+              <span class="font-label-mono text-label-mono text-primary-fixed mb-4 block">{s.no}</span>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-4">{s.title}</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">{s.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>

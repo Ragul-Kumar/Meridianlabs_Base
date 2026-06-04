@@ -4,7 +4,7 @@ import Logo from "@/components/Logo.astro";
 import { withBase } from "@/lib/links";
 
 interface Props {
-  active?: "home" | "services" | "career" | "insights";
+  active?: "home" | "services" | "career" | "insights" | "contact";
 }
 const { active = "home" } = Astro.props;
 
@@ -13,6 +13,7 @@ const links = [
   { label: "Services", href: "/services", key: "services" },
   { label: "Career", href: "/career", key: "career" },
   { label: "Insights", href: "/insights", key: "insights" },
+  { label: "Contact", href: "/contact", key: "contact" },
 ];
 
 const base =
@@ -40,7 +41,7 @@ const current = "text-primary font-bold border-b border-primary-fixed";
     </div>
 
     <a
-      href={withBase("/services")}
+      href={withBase("/contact")}
       class={`${buttonVariants({ size: "default" })} hidden md:inline-flex`}
     >
       Start a Project
@@ -70,7 +71,7 @@ const current = "text-primary font-bold border-b border-primary-fixed";
         </a>
       ))
     }
-    <a href={withBase("/services")} class={`${buttonVariants()} mt-stack-sm w-full`}>
+    <a href={withBase("/contact")} class={`${buttonVariants()} mt-stack-sm w-full`}>
       Start a Project
     </a>
   </div>

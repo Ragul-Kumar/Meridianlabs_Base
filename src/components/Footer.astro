@@ -3,7 +3,7 @@ import Logo from "@/components/Logo.astro";
 import { withBase } from "@/lib/links";
 
 interface Props {
-  active?: "home" | "services" | "career" | "insights";
+  active?: "home" | "services" | "career" | "insights" | "contact";
 }
 const { active = "home" } = Astro.props;
 
@@ -62,7 +62,7 @@ const linkBase =
         Legal &amp; Contact
       </h4>
       <a class={`${linkBase} text-on-surface-variant`} href={withBase("/privacy-policy")}>Privacy Policy</a>
-      <a class={`${linkBase} text-on-surface-variant`} href="mailto:ravi@cyces.co">Contact</a>
+      <a class={`${linkBase} text-on-surface-variant`} href={withBase("/contact")}>Contact</a>
       <div class="flex gap-4 mt-stack-sm">
         <a class="text-on-surface-variant hover:text-primary-fixed" href="#" aria-label="Terminal"><span class="material-symbols-outlined">terminal</span></a>
         <a class="text-on-surface-variant hover:text-primary-fixed" href="#" aria-label="Code"><span class="material-symbols-outlined">code</span></a>
